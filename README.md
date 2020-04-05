@@ -2,7 +2,7 @@
 npm install
 
 # 项目启动
-npm run server
+npm run serve
 
 # 项目打包
 npm run build
