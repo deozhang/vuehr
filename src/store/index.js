@@ -92,7 +92,7 @@ store.watch(function (state) {
 }, function (val) {
     localStorage.setItem('vue-chat-session', JSON.stringify(val));
 }, {
-    deep: true/*这个貌似是开启watch监测的判断,官方说明也比较模糊*/
+    deep: true/*开启watch监测的判断*/
 })
 
 
