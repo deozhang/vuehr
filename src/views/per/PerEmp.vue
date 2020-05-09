@@ -1,6 +1,6 @@
 <template>
     <div>
-        员工资料
+        会员资料
     </div>
 </template>
 

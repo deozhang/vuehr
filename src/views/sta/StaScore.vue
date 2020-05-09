@@ -1,6 +1,6 @@
 <template>
     <div>
-        员工积分统计
+        会员积分统计
     </div>
 </template>
 

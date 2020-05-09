@@ -3,7 +3,7 @@
         <div>
             <div style="display: flex;justify-content: space-between">
                 <div>
-                    <el-input placeholder="请输入员工名进行搜索，可以直接回车搜索..." prefix-icon="el-icon-search"
+                    <el-input placeholder="请输入会员名进行搜索，可以直接回车搜索..." prefix-icon="el-icon-search"
                               clearable
                               @clear="initEmps"
                               style="width: 350px;margin-right: 10px" v-model="keyword"
@@ -158,7 +158,7 @@
                 </el-table-column>
                 <el-table-column
                         prop="workID"
-                        label="工号"
+                        label="会员编号"
                         align="left"
                         width="85">
                 </el-table-column>
@@ -322,7 +322,7 @@
                         <el-col :span="6">
                             <el-form-item label="姓名:" prop="name">
                                 <el-input size="mini" style="width: 150px" prefix-icon="el-icon-edit" v-model="emp.name"
-                                          placeholder="请输入员工姓名"></el-input>
+                                          placeholder="请输入会员姓名"></el-input>
                             </el-form-item>
                         </el-col>
                         <el-col :span="5">
@@ -441,9 +441,9 @@
                     </el-row>
                     <el-row>
                         <el-col :span="6">
-                            <el-form-item label="工号:" prop="workID">
+                            <el-form-item label="会员编号:" prop="workID">
                                 <el-input size="mini" style="width: 150px" prefix-icon="el-icon-edit"
-                                          v-model="emp.workID" placeholder="工号" disabled></el-input>
+                                          v-model="emp.workID" placeholder="会员编号" disabled></el-input>
                             </el-form-item>
                         </el-col>
                         <el-col :span="5">
@@ -660,7 +660,7 @@
                         trigger: 'blur'
                     }],
                     phone: [{required: true, message: '请输入电话号码', trigger: 'blur'}],
-                    address: [{required: true, message: '请输入员工地址', trigger: 'blur'}],
+                    address: [{required: true, message: '请输入会员地址', trigger: 'blur'}],
                     departmentId: [{required: true, message: '请输入部门名称', trigger: 'blur'}],
                     jobLevelId: [{required: true, message: '请输入职称', trigger: 'blur'}],
                     posId: [{required: true, message: '请输入职位', trigger: 'blur'}],
@@ -670,7 +670,7 @@
                     school: [{required: true, message: '请输入毕业院校', trigger: 'blur'}],
                     beginDate: [{required: true, message: '请输入入职日期', trigger: 'blur'}],
                     workState: [{required: true, message: '请输入工作状态', trigger: 'blur'}],
-                    workID: [{required: true, message: '请输入工号', trigger: 'blur'}],
+                    workID: [{required: true, message: '请输入会员编号', trigger: 'blur'}],
                     contractTerm: [{required: true, message: '请输入合同期限', trigger: 'blur'}],
                     conversionTime: [{required: true, message: '请输入转正日期', trigger: 'blur'}],
                     notworkDate: [{required: true, message: '请输入离职日期', trigger: 'blur'}],
@@ -743,7 +743,7 @@
             },
             showEditEmpView(data) {
                 this.initPositions();
-                this.title = '编辑员工信息';
+                this.title = '编辑会员信息';
                 this.emp = data;
                 this.inputDepName = data.department.name;
                 this.dialogVisible = true;
@@ -868,7 +868,7 @@
             },
             showAddEmpView() {
                 this.emptyEmp();
-                this.title = '添加员工';
+                this.title = '添加会员';
                 this.getMaxWordID();
                 this.dialogVisible = true;
             },
