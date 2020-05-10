@@ -1,6 +1,6 @@
 <template>
     <div>
-        工资表查询
+        学费表查询
     </div>
 </template>
 

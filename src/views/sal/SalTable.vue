@@ -1,6 +1,6 @@
 <template>
     <div>
-        工资表管理
+        学费表管理
     </div>
 </template>
 

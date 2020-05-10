@@ -1,7 +1,7 @@
 <template>
     <div style="width: 500px;">
         <el-input
-                placeholder="请输入部门名称进行搜索..."
+                placeholder="请输入课程名称进行搜索..."
                 prefix-icon="el-icon-search"
                 v-model="filterText">
         </el-input>
@@ -21,36 +21,36 @@
                   size="mini"
                   class="depBtn"
                   @click="() => showAddDepView(data)">
-            添加部门
+            添加课程
           </el-button>
           <el-button
                   type="danger"
                   size="mini"
                   class="depBtn"
                   @click="() => deleteDep(data)">
-            删除部门
+            删除课程
           </el-button>
         </span>
       </span>
         </el-tree>
         <el-dialog
-                title="添加部门"
+                title="添加课程"
                 :visible.sync="dialogVisible"
                 width="30%">
             <div>
                 <table>
                     <tr>
                         <td>
-                            <el-tag>上级部门</el-tag>
+                            <el-tag>上级课程</el-tag>
                         </td>
                         <td>{{pname}}</td>
                     </tr>
                     <tr>
                         <td>
-                            <el-tag>部门名称</el-tag>
+                            <el-tag>课程名称</el-tag>
                         </td>
                         <td>
-                            <el-input v-model="dep.name" placeholder="请输入部门名称..."></el-input>
+                            <el-input v-model="dep.name" placeholder="请输入课程名称..."></el-input>
                         </td>
                     </tr>
                 </table>
@@ -138,9 +138,9 @@
             },
             deleteDep(data) {
                 if (data.parent) {
-                    this.$message.error("父部门删除失败");
+                    this.$message.error("父课程删除失败");
                 } else {
-                    this.$confirm('此操作将永久删除【' + data.name + '】部门, 是否继续?', '提示', {
+                    this.$confirm('此操作将永久删除【' + data.name + '】课程, 是否继续?', '提示', {
                         confirmButtonText: '确定',
                         cancelButtonText: '取消',
                         type: 'warning'

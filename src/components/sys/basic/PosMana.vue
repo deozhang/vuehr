@@ -8,7 +8,7 @@
                     element-loading-text="正在加载..."
                     element-loading-spinner="el-icon-loading"
                     element-loading-background="rgba(0, 0, 0, 0.8)"
-                    placeholder="添加职位..."
+                    placeholder="添加教师..."
                     prefix-icon="el-icon-plus"
                     @keydown.enter.native="addPosition"
                     v-model="pos.name">
@@ -34,7 +34,7 @@
                 </el-table-column>
                 <el-table-column
                         prop="name"
-                        label="职位名称"
+                        label="教师名称"
                         width="180">
                 </el-table-column>
                 <el-table-column
@@ -68,12 +68,12 @@
             </el-button>
         </div>
         <el-dialog
-                title="修改职位"
+                title="修改教师"
                 :visible.sync="dialogVisible"
                 width="30%">
             <div>
                 <div>
-                    <el-tag>职位名称</el-tag>
+                    <el-tag>教师名称</el-tag>
                     <el-input class="updatePosInput" size="small" v-model="updatePos.name"></el-input>
                 </div>
                 <div>
@@ -149,7 +149,7 @@
                         }
                     })
                 } else {
-                    this.$message.error('职位名称不可以为空');
+                    this.$message.error('教师名称不可以为空');
                 }
             },
             showEditView(index, data) {
@@ -166,7 +166,7 @@
                 })
             },
             handleDelete(index, data) {
-                this.$confirm('此操作将永久删除【' + data.name + '】职位, 是否继续?', '提示', {
+                this.$confirm('此操作将永久删除【' + data.name + '】教师, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
                     type: 'warning'

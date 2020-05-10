@@ -2,8 +2,8 @@
     <div>
         <div>
             <el-input size="small" v-model="jl.name" style="width: 300px;" prefix-icon="el-icon-plus"
-                      placeholder="添加职称..."></el-input>
-            <el-select v-model="jl.titleLevel" placeholder="职称等级" size="small"
+                      placeholder="添加课程..."></el-input>
+            <el-select v-model="jl.titleLevel" placeholder="课程等级" size="small"
                        style="margin-left: 5px;margin-right: 5px">
                 <el-option
                         v-for="item in titleLevels"
@@ -36,12 +36,12 @@
                 </el-table-column>
                 <el-table-column
                         prop="name"
-                        label="职称名称"
+                        label="课程名称"
                         width="150">
                 </el-table-column>
                 <el-table-column
                         prop="titleLevel"
-                        label="职称级别">
+                        label="课程级别">
                 </el-table-column>
                 <el-table-column
                         prop="createDate"
@@ -68,14 +68,14 @@
 
         </div>
         <el-dialog
-                title="修改职称"
+                title="修改课程"
                 :visible.sync="dialogVisible"
                 width="30%">
             <div>
                 <table>
                     <tr>
                         <td>
-                            <el-tag>职称名</el-tag>
+                            <el-tag>课程名</el-tag>
                         </td>
                         <td>
                             <el-input size="small" v-model="updateJl.name"></el-input>
@@ -83,10 +83,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <el-tag>职称级别</el-tag>
+                            <el-tag>课程级别</el-tag>
                         </td>
                         <td>
-                            <el-select v-model="updateJl.titleLevel" placeholder="职称等级" size="small"
+                            <el-select v-model="updateJl.titleLevel" placeholder="课程等级" size="small"
                                        style="margin-left: 5px;margin-right: 5px">
                                 <el-option
                                         v-for="item in titleLevels"
@@ -138,11 +138,11 @@
                 },
                 jls: [],
                 titleLevels: [
-                    '正高级',
-                    '副高级',
-                    '中级',
-                    '初级',
-                    '员级',
+                    'K1',
+                    'K2',
+                    'K3',
+                    'K4',
+                    'K5',
                 ]
             }
         },
@@ -188,7 +188,7 @@
                 this.dialogVisible = true;
             },
             deleteHandler(data) {
-                this.$confirm('此操作将永久【' + data.name + '】职称, 是否继续?', '提示', {
+                this.$confirm('此操作将永久【' + data.name + '】课程, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
                     type: 'warning'

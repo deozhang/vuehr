@@ -1,14 +1,14 @@
 <template>
     <div>
         <div style="display: flex;justify-content: space-between">
-            <el-button icon="el-icon-plus" type="primary" @click="showAddSalaryView">添加工资账套</el-button>
+            <el-button icon="el-icon-plus" type="primary" @click="showAddSalaryView">添加学费账套</el-button>
             <el-button icon="el-icon-refresh" type="success" @click="initSalaries"></el-button>
         </div>
         <div style="margin-top: 10px">
             <el-table :data="salaries" border stripe>
                 <el-table-column type="selection" width="55"></el-table-column>
                 <el-table-column width="120" prop="name" label="账套名称"></el-table-column>
-                <el-table-column width="70" prop="basicSalary" label="基本工资"></el-table-column>
+                <el-table-column width="70" prop="basicSalary" label="基本费用"></el-table-column>
                 <el-table-column width="70" prop="trafficSalary" label="交通补助"></el-table-column>
                 <el-table-column width="70" prop="lunchSalary" label="午餐补助"></el-table-column>
                 <el-table-column width="70" prop="bonus" label="奖金"></el-table-column>
@@ -59,11 +59,11 @@
         data() {
             return {
                 dialogVisible: false,
-                dialogTitle: '添加工资账套',
+                dialogTitle: '添加学费账套',
                 salaries: [],
                 activeItemIndex: 0,
                 salaryItemName: [
-                    '基本工资',
+                    '基本费用',
                     '交通补助',
                     '午餐补助',
                     '奖金',
@@ -95,7 +95,7 @@
         },
         methods: {
             showEditSalaryView(data) {
-                this.dialogTitle = '修改工资账套';
+                this.dialogTitle = '修改学费账套';
                 this.dialogVisible = true;
                 this.salary.basicSalary = data.basicSalary;
                 this.salary.trafficSalary = data.trafficSalary;
@@ -169,7 +169,7 @@
                     accumulationFundPer: 0,
                     accumulationFundBase: 0
                 }
-                this.dialogTitle = '添加工资账套';
+                this.dialogTitle = '添加学费账套';
                 this.activeItemIndex = 0;
                 this.dialogVisible = true;
             },

@@ -7,27 +7,15 @@
                 <el-table-column prop="workID" label="会员编号" width="120" align="left"></el-table-column>
                 <el-table-column prop="email" label="电子邮件" width="200" align="left"></el-table-column>
                 <el-table-column prop="phone" label="电话号码" width="120" align="left"></el-table-column>
-                <el-table-column prop="department.name" label="所属部门" width="120" align="left"></el-table-column>
-                <el-table-column label="所属部门" align="center">
+                <el-table-column prop="department.name" label="所属课程" width="120" align="left"></el-table-column>
+                <el-table-column label="所属课程" align="center">
                     <template slot-scope="scope">
                         <el-tooltip placement="right" v-if="scope.row.salary">
                             <div slot="content">
                                 <table>
                                     <tr>
-                                        <td>基本工资</td>
+                                        <td>基本费用</td>
                                         <td>{{scope.row.salary.basicSalary}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>交通补助</td>
-                                        <td>{{scope.row.salary.trafficSalary}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>午餐补助</td>
-                                        <td>{{scope.row.salary.lunchSalary}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>奖金</td>
-                                        <td>{{scope.row.salary.bonus}}</td>
                                     </tr>
                                     <tr>
                                         <td>养老金比率</td>
@@ -68,7 +56,7 @@
                     <template slot-scope="scope">
                         <el-popover
                                 placement="left"
-                                title="修改工资账套"
+                                title="修改学费账套"
                                 @show="showPop(scope.row.salary)"
                                 @hide="hidePop(scope.row)"
                                 width="200"
@@ -83,7 +71,7 @@
                                     </el-option>
                                 </el-select>
                             </div>
-                            <el-button slot="reference" type="danger">修改工资账套</el-button>
+                            <el-button slot="reference" type="danger">修改学费账套</el-button>
                         </el-popover>
                     </template>
                 </el-table-column>

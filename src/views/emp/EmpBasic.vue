@@ -67,8 +67,8 @@
                             </el-select>
                         </el-col>
                         <el-col :span="4">
-                            职位:
-                            <el-select v-model="searchValue.posId" placeholder="职位" size="mini" style="width: 130px;">
+                            教师:
+                            <el-select v-model="searchValue.posId" placeholder="教师" size="mini" style="width: 130px;">
                                 <el-option
                                         v-for="item in positions"
                                         :key="item.id"
@@ -78,8 +78,8 @@
                             </el-select>
                         </el-col>
                         <el-col :span="4">
-                            职称:
-                            <el-select v-model="searchValue.jobLevelId" placeholder="职称" size="mini"
+                            课程:
+                            <el-select v-model="searchValue.jobLevelId" placeholder="课程" size="mini"
                                        style="width: 130px;">
                                 <el-option
                                         v-for="item in joblevels"
@@ -90,19 +90,21 @@
                             </el-select>
                         </el-col>
                         <el-col :span="7">
-                            聘用形式:
+                            会员卡类型:
                             <el-radio-group v-model="searchValue.engageForm">
-                                <el-radio label="劳动合同">劳动合同</el-radio>
-                                <el-radio label="劳务合同">劳务合同</el-radio>
+                                <el-radio label="次卡">次卡</el-radio>
+                                <el-radio label="月卡">月卡</el-radio>
+                                <el-radio label="季卡">季卡</el-radio>
+                                <el-radio label="年卡">年卡</el-radio>
                             </el-radio-group>
                         </el-col>
                     </el-row>
                     <el-row style="margin-top: 10px">
                         <el-col :span="5">
-                            所属部门:
+                            所属课程:
                             <el-popover
                                     placement="right"
-                                    title="请选择部门"
+                                    title="请选择课程"
                                     width="200"
                                     trigger="manual"
                                     v-model="popVisible2">
@@ -115,7 +117,7 @@
                             </el-popover>
                         </el-col>
                         <el-col :span="10">
-                            入职日期:
+                            入馆日期:
                             <el-date-picker
                                     v-model="searchValue.beginDateScope"
                                     type="daterange"
@@ -221,53 +223,53 @@
                         prop="department.name"
                         width="100"
                         align="left"
-                        label="所属部门">
+                        label="所属课程">
                 </el-table-column>
                 <el-table-column
                         prop="position.name"
                         width="100"
-                        label="职位">
+                        label="教师">
                 </el-table-column>
                 <el-table-column
                         prop="jobLevel.name"
                         width="100"
-                        label="职称">
+                        label="课程">
                 </el-table-column>
                 <el-table-column
                         prop="engageForm"
                         width="100"
                         align="left"
-                        label="聘用形式">
+                        label="会员卡类型">
                 </el-table-column>
                 <el-table-column
                         prop="tiptopDegree"
                         width="80"
                         align="left"
-                        label="最高学历">
+                        label="身高">
                 </el-table-column>
                 <el-table-column
                         prop="specialty"
                         width="150"
                         align="left"
-                        label="专业">
+                        label="体重（单位Kg）">
                 </el-table-column>
                 <el-table-column
                         prop="school"
                         width="150"
                         align="left"
-                        label="毕业院校">
+                        label="体脂">
                 </el-table-column>
                 <el-table-column
                         prop="beginDate"
                         width="95"
                         align="left"
-                        label="入职日期">
+                        label="入馆日期">
                 </el-table-column>
                 <el-table-column
                         prop="conversionTime"
                         width="95"
                         align="left"
-                        label="转正日期">
+                        label="办卡日期">
                 </el-table-column>
                 <el-table-column
                         prop="beginContract"
@@ -392,8 +394,8 @@
                     </el-row>
                     <el-row>
                         <el-col :span="6">
-                            <el-form-item label="职位:" prop="posId">
-                                <el-select v-model="emp.posId" placeholder="职位" size="mini" style="width: 150px;">
+                            <el-form-item label="教师:" prop="posId">
+                                <el-select v-model="emp.posId" placeholder="教师" size="mini" style="width: 150px;">
                                     <el-option
                                             v-for="item in positions"
                                             :key="item.id"
@@ -404,8 +406,8 @@
                             </el-form-item>
                         </el-col>
                         <el-col :span="5">
-                            <el-form-item label="职称:" prop="jobLevelId">
-                                <el-select v-model="emp.jobLevelId" placeholder="职称" size="mini" style="width: 150px;">
+                            <el-form-item label="课程:" prop="jobLevelId">
+                                <el-select v-model="emp.jobLevelId" placeholder="课程" size="mini" style="width: 150px;">
                                     <el-option
                                             v-for="item in joblevels"
                                             :key="item.id"
@@ -416,10 +418,10 @@
                             </el-form-item>
                         </el-col>
                         <el-col :span="6">
-                            <el-form-item label="所属部门:" prop="departmentId">
+                            <el-form-item label="所属课程:" prop="departmentId">
                                 <el-popover
                                         placement="right"
-                                        title="请选择部门"
+                                        title="请选择课程"
                                         width="200"
                                         trigger="manual"
                                         v-model="popVisible">
@@ -460,40 +462,40 @@
                             </el-form-item>
                         </el-col>
                         <el-col :span="6">
-                            <el-form-item label="毕业院校:" prop="school">
+                            <el-form-item label="体脂:" prop="school">
                                 <el-input size="mini" style="width: 150px" prefix-icon="el-icon-edit"
-                                          v-model="emp.school" placeholder="毕业院校名称"></el-input>
+                                          v-model="emp.school" placeholder="体脂"></el-input>
                             </el-form-item>
                         </el-col>
                         <el-col :span="7">
-                            <el-form-item label="专业名称:" prop="specialty">
+                            <el-form-item label="体重:" prop="specialty">
                                 <el-input size="mini" style="width: 200px" prefix-icon="el-icon-edit"
-                                          v-model="emp.specialty" placeholder="请输入专业名称"></el-input>
+                                          v-model="emp.specialty" placeholder="请输入体重"></el-input>
                             </el-form-item>
                         </el-col>
                     </el-row>
                     <el-row>
                         <el-col :span="6">
-                            <el-form-item label="入职日期:" prop="beginDate">
+                            <el-form-item label="入馆日期:" prop="beginDate">
                                 <el-date-picker
                                         v-model="emp.beginDate"
                                         size="mini"
                                         type="date"
                                         value-format="yyyy-MM-dd"
                                         style="width: 130px;"
-                                        placeholder="入职日期">
+                                        placeholder="入馆日期">
                                 </el-date-picker>
                             </el-form-item>
                         </el-col>
                         <el-col :span="6">
-                            <el-form-item label="转正日期:" prop="conversionTime">
+                            <el-form-item label="办卡日期:" prop="conversionTime">
                                 <el-date-picker
                                         v-model="emp.conversionTime"
                                         size="mini"
                                         type="date"
                                         value-format="yyyy-MM-dd"
                                         style="width: 130px;"
-                                        placeholder="转正日期">
+                                        placeholder="办卡日期">
                                 </el-date-picker>
                             </el-form-item>
                         </el-col>
@@ -530,10 +532,12 @@
                             </el-form-item>
                         </el-col>
                         <el-col :span="8">
-                            <el-form-item label="聘用形式:" prop="engageForm">
+                            <el-form-item label="会员卡类型:" prop="engageForm">
                                 <el-radio-group v-model="emp.engageForm">
-                                    <el-radio label="劳动合同">劳动合同</el-radio>
-                                    <el-radio label="劳务合同">劳务合同</el-radio>
+                                    <el-radio label="次卡">次卡</el-radio>
+                                    <el-radio label="月卡">月卡</el-radio>
+                                    <el-radio label="季卡">季卡</el-radio>
+                                    <el-radio label="年卡">年卡</el-radio>
                                 </el-radio-group>
                             </el-form-item>
                         </el-col>
@@ -607,7 +611,7 @@
                     value: '选项5',
                     label: '北京烤鸭'
                 }],
-                inputDepName: '所属部门',
+                inputDepName: '所属课程',
                 emp: {
                     name: "javaboy",
                     gender: "男",
@@ -617,13 +621,13 @@
                     nationId: 1,
                     nativePlace: "陕西",
                     politicId: 13,
-                    email: "laowang@qq.com",
+                    email: "deozhang@qq.com",
                     phone: "18565558897",
-                    address: "深圳市南山区",
+                    address: "合肥市蜀山区",
                     departmentId: null,
                     jobLevelId: 9,
                     posId: 29,
-                    engageForm: "劳务合同",
+                    engageForm: "会员卡类型",
                     tiptopDegree: "本科",
                     specialty: "信息管理与信息系统",
                     school: "深圳大学",
@@ -651,7 +655,7 @@
                         trigger: 'blur'
                     }],
                     wedlock: [{required: true, message: '请输入婚姻状况', trigger: 'blur'}],
-                    nationId: [{required: true, message: '请输入您组', trigger: 'blur'}],
+                    nationId: [{required: true, message: '请输入民族', trigger: 'blur'}],
                     nativePlace: [{required: true, message: '请输入籍贯', trigger: 'blur'}],
                     politicId: [{required: true, message: '请输入政治面貌', trigger: 'blur'}],
                     email: [{required: true, message: '请输入邮箱地址', trigger: 'blur'}, {
@@ -661,19 +665,19 @@
                     }],
                     phone: [{required: true, message: '请输入电话号码', trigger: 'blur'}],
                     address: [{required: true, message: '请输入会员地址', trigger: 'blur'}],
-                    departmentId: [{required: true, message: '请输入部门名称', trigger: 'blur'}],
-                    jobLevelId: [{required: true, message: '请输入职称', trigger: 'blur'}],
-                    posId: [{required: true, message: '请输入职位', trigger: 'blur'}],
-                    engageForm: [{required: true, message: '请输入聘用形式', trigger: 'blur'}],
+                    departmentId: [{required: true, message: '请输入课程名称', trigger: 'blur'}],
+                    jobLevelId: [{required: true, message: '请输入课程', trigger: 'blur'}],
+                    posId: [{required: true, message: '请输入教师名', trigger: 'blur'}],
+                    engageForm: [{required: true, message: '请输入会员卡类型', trigger: 'blur'}],
                     tiptopDegree: [{required: true, message: '请输入学历', trigger: 'blur'}],
-                    specialty: [{required: true, message: '请输入专业', trigger: 'blur'}],
-                    school: [{required: true, message: '请输入毕业院校', trigger: 'blur'}],
-                    beginDate: [{required: true, message: '请输入入职日期', trigger: 'blur'}],
-                    workState: [{required: true, message: '请输入工作状态', trigger: 'blur'}],
+                    specialty: [{required: true, message: '请输入体重', trigger: 'blur'}],
+                    school: [{required: true, message: '请输入体脂', trigger: 'blur'}],
+                    beginDate: [{required: true, message: '请输入入馆日期', trigger: 'blur'}],
+                    workState: [{required: true, message: '请输入激活状态', trigger: 'blur'}],
                     workID: [{required: true, message: '请输入会员编号', trigger: 'blur'}],
                     contractTerm: [{required: true, message: '请输入合同期限', trigger: 'blur'}],
-                    conversionTime: [{required: true, message: '请输入转正日期', trigger: 'blur'}],
-                    notworkDate: [{required: true, message: '请输入离职日期', trigger: 'blur'}],
+                    conversionTime: [{required: true, message: '请输入办卡日期', trigger: 'blur'}],
+                    notworkDate: [{required: true, message: '请输入合同结束日期', trigger: 'blur'}],
                     beginContract: [{required: true, message: '请输入合同起始日期', trigger: 'blur'}],
                     endContract: [{required: true, message: '请输入合同结束日期', trigger: 'blur'}],
                     workAge: [{required: true, message: '请输入工龄', trigger: 'blur'}],
