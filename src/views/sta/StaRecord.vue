@@ -1,6 +1,6 @@
 <template>
     <div>
-        人事记录统计
+        会员记录统计
     </div>
 </template>
 

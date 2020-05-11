@@ -18,27 +18,11 @@
                                         <td>{{scope.row.salary.basicSalary}}</td>
                                     </tr>
                                     <tr>
-                                        <td>养老金比率</td>
-                                        <td>{{scope.row.salary.pensionPer}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>养老金基数</td>
-                                        <td>{{scope.row.salary.pensionBase}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>医疗保险比率</td>
-                                        <td>{{scope.row.salary.medicalPer}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>医疗保险基数</td>
-                                        <td>{{scope.row.salary.medicalBase}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>公积金比率</td>
+                                        <td>折扣比率</td>
                                         <td>{{scope.row.salary.accumulationFundPer}}</td>
                                     </tr>
                                     <tr>
-                                        <td>公积金基数</td>
+                                        <td>折扣基数</td>
                                         <td>{{scope.row.salary.accumulationFundBase}}</td>
                                     </tr>
                                     <tr>

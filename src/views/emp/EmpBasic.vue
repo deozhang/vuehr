@@ -195,7 +195,7 @@
                 <el-table-column
                         prop="nativePlace"
                         width="80"
-                        label="籍贯">
+                        label="积分">
                 </el-table-column>
                 <el-table-column
                         prop="politicsstatus.name"
@@ -269,7 +269,7 @@
                         prop="conversionTime"
                         width="95"
                         align="left"
-                        label="办卡日期">
+                        label="结束日期">
                 </el-table-column>
                 <el-table-column
                         prop="beginContract"
@@ -374,9 +374,9 @@
                             </el-form-item>
                         </el-col>
                         <el-col :span="5">
-                            <el-form-item label="籍贯:" prop="nativePlace">
+                            <el-form-item label="积分:" prop="nativePlace">
                                 <el-input size="mini" style="width: 120px" prefix-icon="el-icon-edit"
-                                          v-model="emp.nativePlace" placeholder="请输入籍贯"></el-input>
+                                          v-model="emp.nativePlace" placeholder="请输入积分"></el-input>
                             </el-form-item>
                         </el-col>
                         <el-col :span="6">
@@ -488,14 +488,14 @@
                             </el-form-item>
                         </el-col>
                         <el-col :span="6">
-                            <el-form-item label="办卡日期:" prop="conversionTime">
+                            <el-form-item label="结束日期:" prop="conversionTime">
                                 <el-date-picker
                                         v-model="emp.conversionTime"
                                         size="mini"
                                         type="date"
                                         value-format="yyyy-MM-dd"
                                         style="width: 130px;"
-                                        placeholder="办卡日期">
+                                        placeholder="结束日期">
                                 </el-date-picker>
                             </el-form-item>
                         </el-col>
@@ -594,7 +594,7 @@
                 joblevels: [],
                 politicsstatus: [],
                 positions: [],
-                tiptopDegrees: ['本科', '大专', '硕士', '博士', '高中', '初中', '小学', '其他'],
+                tiptopDegrees: [],
                 options: [{
                     value: '选项1',
                     label: '黄金糕'
@@ -615,11 +615,11 @@
                 emp: {
                     name: "javaboy",
                     gender: "男",
-                    birthday: "1989-12-31",
+                    birthday: "1996-12-31",
                     idCard: "610122199001011256",
-                    wedlock: "已婚",
+                    wedlock: "未婚",
                     nationId: 1,
-                    nativePlace: "陕西",
+                    nativePlace: "安徽",
                     politicId: 13,
                     email: "deozhang@qq.com",
                     phone: "18565558897",
@@ -629,7 +629,7 @@
                     posId: 29,
                     engageForm: "会员卡类型",
                     tiptopDegree: "本科",
-                    specialty: "信息管理与信息系统",
+                    specialty: "计算机科学与技术",
                     school: "深圳大学",
                     beginDate: "2017-12-31",
                     workState: "在职",
@@ -656,7 +656,7 @@
                     }],
                     wedlock: [{required: true, message: '请输入婚姻状况', trigger: 'blur'}],
                     nationId: [{required: true, message: '请输入民族', trigger: 'blur'}],
-                    nativePlace: [{required: true, message: '请输入籍贯', trigger: 'blur'}],
+                    nativePlace: [{required: true, message: '请输入积分', trigger: 'blur'}],
                     politicId: [{required: true, message: '请输入政治面貌', trigger: 'blur'}],
                     email: [{required: true, message: '请输入邮箱地址', trigger: 'blur'}, {
                         type: 'email',
@@ -676,7 +676,7 @@
                     workState: [{required: true, message: '请输入激活状态', trigger: 'blur'}],
                     workID: [{required: true, message: '请输入会员编号', trigger: 'blur'}],
                     contractTerm: [{required: true, message: '请输入合同期限', trigger: 'blur'}],
-                    conversionTime: [{required: true, message: '请输入办卡日期', trigger: 'blur'}],
+                    conversionTime: [{required: true, message: '请输入结束日期', trigger: 'blur'}],
                     notworkDate: [{required: true, message: '请输入合同结束日期', trigger: 'blur'}],
                     beginContract: [{required: true, message: '请输入合同起始日期', trigger: 'blur'}],
                     endContract: [{required: true, message: '请输入合同结束日期', trigger: 'blur'}],

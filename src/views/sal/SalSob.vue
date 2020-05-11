@@ -9,19 +9,8 @@
                 <el-table-column type="selection" width="55"></el-table-column>
                 <el-table-column width="120" prop="name" label="账套名称"></el-table-column>
                 <el-table-column width="70" prop="basicSalary" label="基本费用"></el-table-column>
-                <el-table-column width="70" prop="trafficSalary" label="交通补助"></el-table-column>
-                <el-table-column width="70" prop="lunchSalary" label="午餐补助"></el-table-column>
-                <el-table-column width="70" prop="bonus" label="奖金"></el-table-column>
                 <el-table-column width="100" prop="createDate" label="启用时间"></el-table-column>
-                <el-table-column label="养老金" align="center">
-                    <el-table-column width="70" prop="pensionPer" label="比率"></el-table-column>
-                    <el-table-column width="70" prop="pensionBase" label="基数"></el-table-column>
-                </el-table-column>
-                <el-table-column label="医疗保险" align="center">
-                    <el-table-column width="70" prop="medicalPer" label="比率"></el-table-column>
-                    <el-table-column width="70" prop="medicalBase" label="基数"></el-table-column>
-                </el-table-column>
-                <el-table-column label="公积金" align="center">
+                <el-table-column label="折扣" align="center">
                     <el-table-column width="70" prop="accumulationFundPer" label="比率"></el-table-column>
                     <el-table-column width="70" prop="accumulationFundBase" label="基数"></el-table-column>
                 </el-table-column>
@@ -64,15 +53,6 @@
                 activeItemIndex: 0,
                 salaryItemName: [
                     '基本费用',
-                    '交通补助',
-                    '午餐补助',
-                    '奖金',
-                    '养老金比率',
-                    '养老金基数',
-                    '医疗保险比率',
-                    '医疗保险基数',
-                    '公积金比率',
-                    '公积金基数',
                     '账套名称'
                 ],
                 salary: {
